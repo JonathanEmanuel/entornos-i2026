@@ -1,0 +1,28 @@
+:root {
+    --gris-oscuro: #282a36;
+    --amarillo: #fac92b;
+    --blanco: #fdfdfd;
+}
+
+
+header {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--amarillo);
+    color: var(--gris-oscuro);
+}
+
+main {
+    min-height: 80vh;
+}
+
+footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}

@@ -1,14 +1,29 @@
 const pre = document.querySelector('#pre');
 const btnGeo = document.querySelector('#btn-geo');
 
+
+
 if( !navigator.geolocation){
     pre.innerText = 'El navegador No soporta la API de Geolocalización'
 }
+
+let map = null;
+
+const inicializarMapa = () => {
+  map = L.map("map").setView([0, 0], 2);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+}
+
 
 const geoSuccess = (position) => {
     const { latitude, longitude } = position.coords;
     console.log({latitude, longitude})
     pre.innerText = `Latidud ${latitude}  Longitud ${longitude}`;
+
+      map.setView([latitude, longitude], 15);
 
 }
 
@@ -32,3 +47,5 @@ const geoError= (err) => {
 btnGeo.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 })
+
+inicializarMapa();

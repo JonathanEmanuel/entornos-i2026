@@ -26,3 +26,11 @@ footer {
     background-color: var(--gris-oscuro);
     color: var(--blanco);
 }
+
+pre {
+    margin-top: 10px;
+    border-radius: 0.5rem;
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    padding: 10px;
+}
